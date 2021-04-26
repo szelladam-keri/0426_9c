@@ -1,12 +1,54 @@
 let kpo = 0
 input.onGesture(Gesture.Shake, function () {
-    kpo = randint(0, 2)
+    kpo = randint(0, 5)
     if (kpo == 0) {
-        basic.showIcon(IconNames.SmallSquare)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
     } else if (kpo == 1) {
-        basic.showIcon(IconNames.Square)
+        basic.showLeds(`
+            . . . . .
+            . . . # .
+            . . . . .
+            . # . . .
+            . . . . .
+            `)
+    } else if (kpo == 2) {
+        basic.showLeds(`
+            . . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . .
+            `)
+    } else if (kpo == 3) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . . . #
+            `)
+    } else if (kpo == 4) {
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . #
+            `)
     } else {
-        basic.showIcon(IconNames.Scissors)
+        basic.showLeds(`
+            # . # . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . # . #
+            `)
     }
 })
 basic.forever(function () {
